@@ -1,0 +1,66 @@
+
+\documentclass[11pt, letterpaper]{article}
+
+\usepackage[margin=.5in]{geometry}
+\usepackage{multicol}
+\usepackage{vwcol}
+\usepackage{xcolor}
+\usepackage{fontspec}
+\usepackage{ragged2e}
+\usepackage{enumitem}
+
+\definecolor{light-gray}{RGB}{224,224,224}
+
+\setmainfont{Times New Roman}
+
+\setlength\parindent{0pt}
+
+\pagenumbering{gobble}
+
+\newlength{\remaining}
+\newcommand{\titleline}[1]{%
+    \setlength{\remaining}{\textwidth-\widthof{#1}}
+    \noindent\underline{#1\hspace*{\remaining}}\par
+}
+
+\input{info.tex}
+
+\begin{document}
+
+    \begin{center}
+        {\huge Tanner Muldoon}
+    \end{center}
+    \begin{minipage}[t]{.33\textwidth}
+        \begin{flushleft}
+            \address
+        \end{flushleft}
+    \end{minipage}
+    \begin{minipage}[t]{.33\textwidth}
+        \begin{center}
+            U.S. Citizen
+        \end{center}
+    \end{minipage}
+    \begin{minipage}[t]{.33\textwidth}
+        \begin{flushright}
+            \email
+
+            \phone
+        \end{flushright}
+    \end{minipage}
+    \smallskip
+
+    \hrulefill
+    \newline
+    \input{blurb.tex}
+    \smallskip
+
+    \colorbox{light-gray}{
+        \begin{minipage}[t]{.18\textwidth}
+            \input{sidebar.tex}
+        \end{minipage}
+    }
+    \begin{minipage}[t]{.8\textwidth}
+        \input{contents.tex}
+    \end{minipage}
+
+\end{document}
