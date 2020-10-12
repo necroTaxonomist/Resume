@@ -1,7 +1,7 @@
 
 TEX=xelatex
 
-all: resume.pdf resume_plain.pdf
+all: resume.pdf
 
 %.pdf: *.tex packages
 	$(TEX) -enable-installer -interaction=nonstopmode $(subst .pdf,.tex,$@)

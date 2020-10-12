@@ -18,9 +18,29 @@
 \pagenumbering{gobble}
 
 \newlength{\remaining}
-\newcommand{\titleline}[1]{%
+\newcommand{\titleline}[1]{
     \setlength{\remaining}{\textwidth-\widthof{#1}}
     \noindent\underline{#1\hspace*{\remaining}}\par
+    \medskip
+}
+
+\newcommand{\sectionhdr}[1]{
+    { \LARGE \titleline{#1} }
+}
+
+\newcommand{\subsectionhdr}[1]{
+    { \Large \textbf{#1} }
+    \newline
+}
+
+\newcommand{\smallhdr}[1]{
+    { \large \textbf{#1} }
+}
+
+\newcommand{\duration}[3]{
+    \textbf{\textit{#1}}
+    \hfill
+    \textbf{#2 --- #3}
 }
 
 \input{info.tex}
@@ -28,8 +48,9 @@
 \begin{document}
 
     \begin{center}
-        {\huge Tanner Muldoon}
+        {\huge \textbf{Tanner Muldoon}}
     \end{center}
+
     \begin{minipage}[t]{.33\textwidth}
         \begin{flushleft}
             \address
@@ -49,18 +70,15 @@
     \end{minipage}
     \smallskip
 
-    \hrulefill
-    \newline
     \input{blurb.tex}
-    \smallskip
 
-    \colorbox{light-gray}{
-        \begin{minipage}[t]{.18\textwidth}
-            \input{sidebar.tex}
-        \end{minipage}
-    }
-    \begin{minipage}[t]{.8\textwidth}
-        \input{contents.tex}
-    \end{minipage}
+    \sectionhdr{Education}
+    \input{education.tex}
+
+    \sectionhdr{Work Experience}
+    \input{experience.tex}
+
+    \sectionhdr{Skills and Concentrations}
+    \input{skills.tex}
 
 \end{document}
