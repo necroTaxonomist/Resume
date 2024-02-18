@@ -1,13 +1,14 @@
 
 \documentclass[11pt, letterpaper]{article}
 
+\usepackage{enumitem}
+\usepackage{fontspec}
+\usepackage{hyperref}
 \usepackage[margin=.5in]{geometry}
 \usepackage{multicol}
-\usepackage{vwcol}
-\usepackage{xcolor}
-\usepackage{fontspec}
 \usepackage{ragged2e}
-\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{vwcol}
 
 \definecolor{light-gray}{RGB}{224,224,224}
 
@@ -43,6 +44,19 @@
     \textbf{#2 --- #3}
 }
 
+\newcommand{\timestamp}[2]{
+    \textbf{\textit{#1}}
+    \hfill
+    \textbf{#2}
+}
+
+\newcommand{\subsectiontimestamp}[3]{
+    { \Large \textbf{#1} }
+    \hfill
+    \textbf{#2 --- #3}
+    \newline
+}
+
 \input{info.tex}
 
 \begin{document}
@@ -66,19 +80,21 @@
             \email
 
             \phone
+
+            \linkedin
         \end{flushright}
     \end{minipage}
     \smallskip
 
     \input{blurb.tex}
 
-    \sectionhdr{Education}
+    \sectionhdr{Education and Certifications}
     \input{education.tex}
 
     \sectionhdr{Work Experience}
     \input{experience.tex}
 
-    \sectionhdr{Skills and Concentrations}
-    \input{skills.tex}
+    \sectionhdr{Personal Projects}
+    \input{projects.tex}
 
 \end{document}
